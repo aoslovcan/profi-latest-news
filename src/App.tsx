@@ -2,7 +2,7 @@ import React from 'react';
 
 function App() {
   return (
-    <div data-testid="test">Hello</div>
+    <div className="u-lyt" data-testid="test">Hello</div>
   );
 }
 
