@@ -1,21 +1,22 @@
 .u-lyt{
+  border: 1px solid black;
   font-family: $font-primary;
   @include fluidValue("padding-top", "s-104");
   @include fluidValue("padding-bottom", "s-104");
-  @include fluidValue("padding-right", "s-180");
-  @include fluidValue("padding-left", "s-104");
+  @include fluidValue("margin-right", "s-180");
+  @include fluidValue("margin-left", "s-180");
 
   @include mq(lg) {
-    @include fluidValue("padding-right", "s-180");
-    @include fluidValue("padding-left", "s-180");
+    @include fluidValue("margin-right", "s-180");
+    @include fluidValue("margin-left", "s-180");
   }
 
   @include mq(md) {
-    @include fluidValue("padding-right", "s-56");
-    @include fluidValue("padding-left", "s-56");
+    @include fluidValue("margin-right", "s-56");
+    @include fluidValue("margin-left", "s-56");
   }
   @include mq(sm) {
-    @include fluidValue("padding-right", "s-20");
-    @include fluidValue("padding-left", "s-20");
+    @include fluidValue("margin-right", "s-20");
+    @include fluidValue("margin-left", "s-20");
   }
 }
