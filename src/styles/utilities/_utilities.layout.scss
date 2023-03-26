@@ -5,4 +5,21 @@
   @include fluidValue("padding-bottom", "s-104");
   @include fluidValue("padding-right", "s-180");
   @include fluidValue("padding-left", "s-104");
+
+  @include mq(lg) {
+    @include fluidValue("padding-right", "s-180");
+    @include fluidValue("padding-left", "s-180");
+
+  }
+
+  @include mq(md) {
+    @include fluidValue("padding-right", "s-56");
+    @include fluidValue("padding-left", "s-56");
+    margin-left: 0;
+  }
+  @include mq(sm) {
+    @include fluidValue("padding-right", "s-20");
+    @include fluidValue("padding-left", "s-20");
+    margin-left: 0;
+  }
 }
