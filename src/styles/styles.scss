@@ -5,6 +5,7 @@
 @import "utilities/utilities.index";
 @import "generics/generics.index";
 @import "elements/elements.index";
+@import "components/components.index";
 
 .c-header {
   display: flex;
@@ -96,13 +97,7 @@
   @include fluidValue("padding-top", "s-104");
 }
 
-.sidebar {
-  position: fixed;
-  min-height: 100vh;
-  width: 10%;
-  //@include fluidValue("margin-right", "s-180");
 
-}
 
 .main {
   min-height: 100vh;
@@ -132,34 +127,7 @@
   }
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
-  //align-items: center;
-  justify-content: center;
 
-  &__item {
-    display: flex;
-    align-items: center;
-    @extend .u-b4;
-    width: rem(63px);
-    height: rem(63px);
-    justify-content: center;
-    justify-items: center;
-    padding: rem(5px);
-    border-radius: rem(5px);
-
-    &-active {
-      background-color: $primary-white;
-    }
-
-    a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}
 
 .c-card {
   position: relative;

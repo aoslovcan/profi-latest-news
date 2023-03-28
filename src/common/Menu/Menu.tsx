@@ -5,15 +5,11 @@ type MenuProps = {
 }
 
 const Menu = ({children} : MenuProps) => {
-
-
-
     return(
-        <div className="menu-container">
-            <ul className="menu">
+            <ul className="c-menu">
                 {children}
             </ul>
-        </div>
+
 
     )
 }

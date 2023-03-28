@@ -6,7 +6,7 @@ type MenuItemProps = {
 
 const MenuItem = ({children} : MenuItemProps) => {
     return(
-        <div className="menu__item">
+        <div className="c-menu__item">
             {children}
         </div>
 
