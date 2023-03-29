@@ -1,0 +1,13 @@
+.c-button {
+  border-radius: rem(6px);
+  border: none;
+  outline: none;
+  width: auto;
+  padding: rem(10px) rem(16px);
+  font-family: $font-primary;
+
+  &--primary {
+    background-color: $primary-red;
+    color: $primary-white
+  }
+}

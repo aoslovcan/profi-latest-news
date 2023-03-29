@@ -7,83 +7,13 @@
 @import "elements/elements.index";
 @import "components/components.index";
 
-.c-header {
-  display: flex;
-  flex-direction: row;
-  @include fluidValue("padding-bottom", "s-24");
-  position: fixed;
-  @include fluidValue("padding-right", "s-320");
-  z-index: 9999;
 
-  @include mq(lg) {
-    @include fluidValue("padding-right", "s-320");
-  }
-
-  @include mq(md) {
-    @include fluidValue("padding-right", "s-264");
-  }
-  @include mq(sm) {
-    @include fluidValue("padding-right", "s-180");
-  }
-
-  .logo {
-    width: rem(139px);
-    height: rem(39px);
-  }
-}
-
-.search-element {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: $primary-white;
-  border-radius: rem(10px);
-  box-shadow: 0 1px 2px -1px $shadow-color;
-  width: rem(725px);
-  @include fluidValue("margin-left", "s-40");
-
-  &__content {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .icon {
-    margin-left: rem(5px);
-    margin-right: rem(5px);
-  }
-
-  input {
-    outline: none;
-    border: none;
-    opacity: 0.4;
-  }
-
-  .c-button {
-    text-transform: uppercase;
-  }
-;
-
-}
 
 .icon {
   width: rem(20px);
   height: rem(20px);
 }
 
-
-.c-button {
-  border-radius: rem(6px);
-  border: none;
-  outline: none;
-  width: auto;
-  padding: rem(10px) rem(16px);
-  font-family: $font-primary;
-
-  &--primary {
-    background-color: $primary-red;
-    color: $primary-white
-  }
-}
 
 .border-bottom {
   border-bottom: 2px solid $border-opacity;
