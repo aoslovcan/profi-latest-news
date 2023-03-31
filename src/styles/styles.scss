@@ -59,47 +59,7 @@
 
 
 
-.c-card {
-  position: relative;
-  width: 322px;
-  @include fluidValue("margin", "s-8");
 
-
-  &__inner {
-
-  }
-
-  &__header {
-
-    img {
-      border-top-left-radius: rem(5px);
-      border-top-right-radius: rem(5px);
-    }
-
-  }
-
-  &__content {
-    background-color: $primary-white;
-    height: 112px;
-    position: absolute;
-    width: 100%;
-    top: 112px;
-    @include fluidValue("padding-left", "s-12");
-    @include fluidValue("padding-top", "s-12");
-
-
-    span {
-      @include fluidValue("margin-top", "s-32");
-    }
-
-
-    &__footer {
-      @include fluidValue("margin-top", "s-24");
-      letter-spacing: -0.0675px;
-      @include fontSize("b4")
-    }
-  }
-}
 
 .c-panel {
 
