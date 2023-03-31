@@ -1,9 +1,0 @@
-import React from 'react';
-
-function App() {
-  return (
-    <div data-testid="test">Hello</div>
-  );
-}
-
-export default App;

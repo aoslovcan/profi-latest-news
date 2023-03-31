@@ -1,0 +1,22 @@
+.u-lyt{
+  font-family: $font-primary;
+  @include fluidValue("padding-top", "s-104");
+  @include fluidValue("padding-bottom", "s-104");
+  @include fluidValue("margin-right", "s-180");
+  @include fluidValue("margin-left", "s-180");
+
+  @include mq(lg) {
+    @include fluidValue("margin-right", "s-180");
+    @include fluidValue("margin-left", "s-180");
+  }
+
+  @include mq(md) {
+    @include fluidValue("margin-right", "s-56");
+    @include fluidValue("margin-left", "s-56");
+  }
+  @include mq(sm) {
+    @include fluidValue("margin-right", "s-20");
+    @include fluidValue("margin-left", "s-20");
+  }
+
+}

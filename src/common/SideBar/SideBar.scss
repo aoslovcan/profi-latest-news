@@ -1,0 +1,6 @@
+.sidebar {
+  position: fixed;
+  min-height: 100vh;
+  width: 10%;
+  //@include fluidValue("margin-right", "s-180");
+}
