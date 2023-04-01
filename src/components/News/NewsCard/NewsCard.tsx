@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../../../common/Card/Card";
-import { News } from "../../../types/news";
+import { NewsList, News } from "../../../types/news";
+import "../News.scss";
 
 type NewsCardProps = {
   data: News;
@@ -8,6 +9,7 @@ type NewsCardProps = {
 };
 
 const NewsCard = ({ data, extraClass }: NewsCardProps) => {
+  // @ts-ignore
   const { urlToImage, category, author, title } = data;
 
   const imageComponent = urlToImage && <img alt="test" src={urlToImage} />;
