@@ -1,4 +1,4 @@
-.u-lyt{
+.u-lyt {
   font-family: $font-primary;
   @include fluidValue("padding-top", "s-104");
   @include fluidValue("padding-bottom", "s-104");
@@ -18,5 +18,4 @@
     @include fluidValue("margin-right", "s-20");
     @include fluidValue("margin-left", "s-20");
   }
-
 }
