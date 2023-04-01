@@ -12,8 +12,6 @@ const Main = () => {
 
   const { data, error, isLoading } = useNews(queryParams);
 
-  console.log(data);
-
   const newsData = {
     id: undefined,
     urlToImage: "https://i.ytimg.com/vi/Zc9oRKexV_s/maxresdefault.jpg",
