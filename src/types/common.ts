@@ -1,1 +1,1 @@
-export type data = number | string
+export type data = number | string;

@@ -14,8 +14,8 @@ $max-height: 900;
  * padding-top: get-vw(100px);
  */
 @function get-vw($size, $base-vw: $max-width) {
-    $vw-context: ($base-vw * 0.01) * 1px; /* 1 */
-    @return strip-units(math.div($size, $vw-context)) * 1vw;
+  $vw-context: ($base-vw * 0.01) * 1px; /* 1 */
+  @return strip-units(math.div($size, $vw-context)) * 1vw;
 }
 
 /**
@@ -26,8 +26,8 @@ $max-height: 900;
  * padding-top: get-vh(100px);
  */
 @function get-vh($size) {
-    $vw-context: ($max-height * 0.01) * 1px; /* 1 */
-    @return math.div($size, $vw-context) * 1vh;
+  $vw-context: ($max-height * 0.01) * 1px; /* 1 */
+  @return math.div($size, $vw-context) * 1vh;
 }
 
 /**
@@ -38,5 +38,5 @@ $max-height: 900;
  * returns: 100
  */
 @function strip-units($number) {
-    @return math.div($number, ($number * 0 + 1));
+  @return math.div($number, ($number * 0 + 1));
 }

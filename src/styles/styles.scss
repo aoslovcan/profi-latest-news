@@ -7,13 +7,10 @@
 @import "elements/elements.index";
 @import "components/components.index";
 
-
-
 .icon {
   width: rem(20px);
   height: rem(20px);
 }
-
 
 .border-bottom {
   border-bottom: 2px solid $border-opacity;
@@ -27,12 +24,9 @@
   @include fluidValue("padding-top", "s-104");
 }
 
-
-
 .main {
   min-height: 100vh;
   @include fluidValue("margin-left", "s-120");
-
 
   @include mq(lg) {
     @include fluidValue("margin-left", "s-120");
@@ -52,17 +46,10 @@
     /*flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;*/
-
-
   }
 }
 
-
-
-
-
 .c-panel {
-
   background-color: $primary-white;
   border-radius: rem(8px);
   //smax-width: 321px;
@@ -70,14 +57,14 @@
   overflow-y: scroll;
   @include fluidValue("padding", "s-12");
 
- h2:first-child{
-   display: flex;
-   flex-direction: row;
+  h2:first-child {
+    display: flex;
+    flex-direction: row;
 
-   .icon{
-     @include fluidValue("margin-right", "s-12");
-   }
- }
+    .icon {
+      @include fluidValue("margin-right", "s-12");
+    }
+  }
 }
 
 .news {
@@ -88,7 +75,7 @@
   }
 }
 
-.item{
+.item {
   grid-column: 1;
 }
 
@@ -96,4 +83,3 @@
   grid-column: 3;
   grid-row: 1 / span 3;
 }
-

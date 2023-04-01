@@ -1,16 +1,11 @@
-import React, {ReactNode} from "react";
+import React, { ReactNode } from "react";
 
 type MenuItemProps = {
-    children: ReactNode
-}
+  children: ReactNode;
+};
 
-const MenuItem = ({children} : MenuItemProps) => {
-    return(
-        <div className="c-menu__item">
-            {children}
-        </div>
+const MenuItem = ({ children }: MenuItemProps) => {
+  return <div className="c-menu__item">{children}</div>;
+};
 
-    )
-}
-
-export default MenuItem
+export default MenuItem;
