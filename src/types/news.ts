@@ -5,3 +5,5 @@ export type News = {
   title: string | undefined;
   author: string;
 };
+
+export type NewsList = News[];

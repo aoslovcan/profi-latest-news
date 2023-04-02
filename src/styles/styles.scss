@@ -4,7 +4,9 @@
 @import "settings/settings.index";
 @import "utilities/utilities.index";
 @import "generics/generics.index";
+
 @import "elements/elements.index";
+
 @import "components/components.index";
 
 .icon {
@@ -14,39 +16,6 @@
 
 .border-bottom {
   border-bottom: 2px solid $border-opacity;
-}
-
-.o-page {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-  @include fluidValue("padding-top", "s-104");
-}
-
-.main {
-  min-height: 100vh;
-  @include fluidValue("margin-left", "s-120");
-
-  @include mq(lg) {
-    @include fluidValue("margin-left", "s-120");
-  }
-
-  @include mq(md) {
-    @include fluidValue("margin-left", "s-56");
-  }
-  @include mq(sm) {
-    @include fluidValue("margin-left", "s-20");
-  }
-
-  &__inner {
-    display: grid;
-    grid-gap: 41px;
-    grid-template-columns: 322px 322px 322px;
-    /*flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;*/
-  }
 }
 
 .c-panel {
@@ -73,13 +42,4 @@
     @include fluidValue("padding-top", "s-12");
     @include fluidValue("padding-right", "s-12");
   }
-}
-
-.item {
-  grid-column: 1;
-}
-
-.item-column {
-  grid-column: 3;
-  grid-row: 1 / span 3;
 }

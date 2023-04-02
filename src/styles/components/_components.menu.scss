@@ -14,8 +14,9 @@
     padding: rem(5px);
     border-radius: rem(5px);
 
-    &-active {
+    .active {
       background-color: $primary-white;
+      padding: rem(5px);
     }
 
     a {

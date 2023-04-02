@@ -9,7 +9,7 @@ const Navigation = () => {
     {
       label: "Home",
       icon: "Home",
-      url: "/news",
+      url: "/news/",
     },
     {
       label: "General",

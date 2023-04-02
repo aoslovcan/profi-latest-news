@@ -57,3 +57,10 @@
 @function em($size) {
   @return math.div($size, 16px) * 1em;
 }
+
+$dotPulseBefore: rem(9984px) 0 0 rem(-5px), rem(9984px) 0 0 rem(2px),
+  rem(9984px) 0 0 rem(-5px);
+$dotPulse: rem(9999px) 0 0 rem(-5px), rem(9999px) 0 0 rem(2px),
+  rem(9999px) 0 0 rem(-5px);
+$dotPulseAfter: rem(10014px) 0 0 rem(-5px), rem(10014px) 0 0 rem(2px),
+  rem(10014px) 0 0 rem(-5px);
