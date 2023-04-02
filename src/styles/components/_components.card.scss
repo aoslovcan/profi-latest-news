@@ -1,13 +1,16 @@
 .c-card {
   position: relative;
-  width: 322px;
+  width: rem(322px);
   @include fluidValue("margin", "s-8");
 
   &__inner {
   }
 
   &__header {
-    img {
+    &-inner {
+      background-color: $primary-red;
+      height: rem(200px);
+      width: rem(322px);
       border-top-left-radius: rem(5px);
       border-top-right-radius: rem(5px);
     }

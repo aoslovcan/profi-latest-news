@@ -8,10 +8,14 @@ type NewsProps = {
 };
 
 const NewsLayout = ({ newsData }: NewsProps) => {
+  const returnRestData = () => {
+    return newsData.slice(3);
+  };
+
   return (
     <>
       <NewsCard data={newsData[0]} extraClass="item" />
-      <NewsCard data={newsData[0]} />
+      <NewsCard data={newsData[1]} />
       <div className="c-panel c-news-panel item-column">
         <h2 className="c-panel__title">
           <img alt="latest" className="icon" src={LatestNews} />
@@ -48,14 +52,11 @@ const NewsLayout = ({ newsData }: NewsProps) => {
           </li>
         </ul>
       </div>
-      <NewsCard data={newsData[0]} extraClass="item" />
-      <NewsCard data={newsData[0]} />
-      <NewsCard data={newsData[0]} />
-      <NewsCard data={newsData[0]} />
-      <NewsCard data={newsData[0]} />
-      <NewsCard data={newsData[0]} />
-      <NewsCard data={newsData[0]} />
-      <NewsCard data={newsData[0]} />
+      <NewsCard data={newsData[2]} extraClass="item" />
+
+      {returnRestData().map((news) => (
+        <NewsCard data={news} />
+      ))}
     </>
   );
 };

@@ -1,19 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "./components/Header/Header";
 import SideBar from "./common/SideBar/SideBar";
 import Main from "./pages/Main/Main";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
-import { NewsClient } from "./api/NewsClient/NewsClient";
 
 export const Layout = () => {
-  const newsClient = new NewsClient();
-  const query = `category=science&country=us`;
-
-  useEffect(() => {
-    newsClient.getNews(query).then((res) => console.log(res));
-  }, []);
-
   return (
     <div className="u-lyt" data-testid="layout">
       <Header />
@@ -26,6 +18,7 @@ export const Layout = () => {
             <Route path="/" element={<Main />}></Route>
             <Route path="/news" element={<Main />}></Route>
             <Route path="/news/:category" element={<Main />}></Route>
+            <Route index element={<Navigate to="/news" replace />} />
           </Routes>
         </div>
       </div>
