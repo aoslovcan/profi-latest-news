@@ -3,11 +3,14 @@ import { useParams } from "react-router-dom";
 import { useNews } from "../../helpers/customHooks";
 import NewsLayout from "../../components/News/News";
 import Loader from "../../common/Loader/Loader";
+import {useQuery} from "react-query";
 
 const Main = () => {
-  const { category } = useParams();
-  const [queryParams, setQueryParamas] = useState("");
-  const [newsCategory, setNewsCategory] = useState<string | undefined>();
+  const { category, find } = useParams();
+  const [queryParams, setQueryParamas] = useState("&country=us");
+  const [newsCategory, setNewsCategory] = useState<string | undefined>("");
+
+  console.log(queryParams);
 
   useEffect(() => {
     if (!category) {
@@ -15,11 +18,17 @@ const Main = () => {
       setNewsCategory("");
       return;
     }
-    setQueryParamas(`&category=${category}&country=us`);
-    setNewsCategory(category);
+
+    else {
+      setQueryParamas(`&category=${category}&country=us`);
+      setNewsCategory(category);
+      return;
+    }
+
   }, [category]);
 
   const { data, error, isLoading } = useNews(newsCategory, queryParams);
+
 
   const getTitle = () => {
     switch (category) {
@@ -37,12 +46,26 @@ const Main = () => {
     console.log(error);
   }
 
+  const filterArticles = (search : string | undefined) => {
+    if(!search){
+      return [];
+    }
+    // @ts-ignore
+    return data?.articles.filter((article) => article.title.toLowerCase().includes(search.toLowerCase()));
+  }
+
+  const getNewsData = () => {}
+
+  const filterData = filterArticles(find);
+
+
+
   return (
     <>
       <h1 className="u-capitalize">{getTitle()}</h1>
       <div className="main__inner">
         {/*@ts-ignore*/}
-        {data?.articles && <NewsLayout newsData={data.articles} />}
+        {data && data.articles && <NewsLayout newsData={data.articles} />}
       </div>
     </>
   );

@@ -18,6 +18,7 @@ export const Layout = () => {
             <Route path="/" element={<Main />}></Route>
             <Route path="/news" element={<Main />}></Route>
             <Route path="/news/:category" element={<Main />}></Route>
+            <Route path="/news/search/:find" element={<Main />}></Route>
             <Route index element={<Navigate to="/news" replace />} />
           </Routes>
         </div>
