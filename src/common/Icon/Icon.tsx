@@ -7,7 +7,7 @@ import { ReactComponent as Briefcase } from "../../assets/icons/briefcase.svg";
 import { ReactComponent as Bold } from "../../assets/icons/Bold.svg";
 import { ReactComponent as Health } from "../../assets/icons/Health.svg";
 import { ReactComponent as LabBottle } from "../../assets/icons/lab-bottle-experiment.svg";
-import {ReactComponent as LatestNews} from "../../assets/icons/Latest.svg";
+import { ReactComponent as LatestNews } from "../../assets/icons/Latest.svg";
 
 type IconProps = {
   type: string;
@@ -33,7 +33,7 @@ const Icon = ({ type }: IconProps) => {
       case "LabBottle":
         return <LabBottle />;
       case "LatestNews":
-        return <LatestNews/>
+        return <LatestNews />;
     }
   };
 
