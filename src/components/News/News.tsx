@@ -46,8 +46,6 @@ const NewsLayout = ({ newsData }: NewsProps) => {
         </h2>
         <ul className="news">
           {
-
-
             data &&
               // @ts-ignore
               data?.articles.map((article) => (
