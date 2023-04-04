@@ -56,13 +56,15 @@ const Main = () => {
   const newsData = filterData.length ? filterData : data?.articles;
 
   return (
-    <>
-      <h1 className="u-capitalize">{getTitle()}</h1>
+    <div id="main-page" data-testid="main-page">
+      <h1 data-testid="page-title" className="u-capitalize">
+        {getTitle()}
+      </h1>
       <div className="main__inner">
-        {newsData.length > 1 && <NewsLayout newsData={newsData} />}
-        {newsData.length === 1 && <NewsCard data={newsData[0]} />}
+        {newsData?.length > 1 && <NewsLayout newsData={newsData} />}
+        {newsData?.length === 1 && <NewsCard data={newsData[0]} />}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -9,21 +9,18 @@ type NewsCardProps = {
 };
 
 const NewsCard = ({ data, extraClass }: NewsCardProps) => {
-  // @ts-ignore
-  const { urlToImage, category, author, title } = data;
-
-  const imageComponent = urlToImage ? (
-    <img className="c-card__header-inner" alt="test" src={urlToImage} />
+  const imageComponent = data?.urlToImage ? (
+    <img className="c-card__header-inner" alt="test" src={data?.urlToImage} />
   ) : (
     <div className="c-card__header-inner"></div>
   );
 
-  const titleExcerpt = `${title?.slice(0, 50)}...`;
+  const titleExcerpt = `${data?.title?.slice(0, 50)}...`;
   const newsContent = (
     <>
-      <span className="u-b-blue">{category}</span>
+      <span className="u-b-blue">{data?.category}</span>
       <h2>{titleExcerpt}</h2>
-      <div className="c-card__content__footer">{author}</div>
+      <div className="c-card__content__footer">{data?.author}</div>
     </>
   );
 

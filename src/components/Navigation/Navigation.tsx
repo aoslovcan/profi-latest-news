@@ -44,7 +44,7 @@ const Navigation = () => {
   ];
 
   return (
-    <Menu>
+    <Menu id="category-menu">
       {navigationItems.map(({ url, label, icon }) => (
         <MenuItem>
           <NavLink
