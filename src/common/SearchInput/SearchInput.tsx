@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import Icon from "../Icon/Icon";
 import Button from "../Button/Button";
 import { data } from "../../types/common";
@@ -31,7 +31,12 @@ const SearchInput = ({
   }, [inputValue]);
 
   const searchButton = hasButton && !isReset && (
-    <Button label="Search" handleClick={onSearch} type="primary" />
+    <Button
+      id="search-button"
+      label="Search"
+      handleClick={onSearch}
+      type="primary"
+    />
   );
 
   const onReset = () => {
@@ -41,14 +46,21 @@ const SearchInput = ({
   };
 
   const resetButton = isReset && (
-    <Button label="Reset" handleClick={onReset} type="primary" />
+    <Button
+      id="reset-button"
+      label="Reset"
+      handleClick={onReset}
+      type="primary"
+    />
   );
 
   return (
-    <div className="c-search-form">
+    <div className="c-search-form" data-testid="c-search-form">
       <div className="c-search-form__inner">
         <Icon type="Search" />
         <input
+          id="search-input"
+          data-testid="search-input"
           type="search"
           value={inputValue}
           placeholder={placeholder}
