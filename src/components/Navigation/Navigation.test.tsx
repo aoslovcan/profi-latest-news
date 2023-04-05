@@ -1,12 +1,9 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import { Layout } from "./Layout";
+import Navigation from "./Navigation";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
 
-const query = new QueryClient();
-
-jest.mock("./common/Icon/Icon", () => () => {
+jest.mock("../../common/Icon/Icon", () => () => {
   const getIcon = () => {
     return (
       <svg
@@ -28,15 +25,29 @@ jest.mock("./common/Icon/Icon", () => () => {
   return <div className="icon">{getIcon()}</div>;
 });
 
-describe("Layout", () => {
+describe("Navigation", () => {
   it("render", () => {
     render(
-      <QueryClientProvider client={query}>
-        <BrowserRouter>
-          <Layout />
-        </BrowserRouter>
-      </QueryClientProvider>
+      <BrowserRouter>
+        <Navigation />
+      </BrowserRouter>
     );
-    expect(screen.getByTestId("layout")).toBeInTheDocument();
+    expect(screen.getByTestId("category-menu")).toBeInTheDocument();
+  });
+
+  it("render links", () => {
+    render(
+      <BrowserRouter>
+        <Navigation />
+      </BrowserRouter>
+    );
+
+    expect(screen.getByText("Home")).toBeInTheDocument();
+    expect(screen.getByText("General")).toBeInTheDocument();
+    expect(screen.getByText("Business")).toBeInTheDocument();
+    expect(screen.getByText("Health")).toBeInTheDocument();
+    expect(screen.getByText("Science")).toBeInTheDocument();
+    expect(screen.getByText("Sports")).toBeInTheDocument();
+    expect(screen.getByText("Technology")).toBeInTheDocument();
   });
 });

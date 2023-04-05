@@ -45,18 +45,16 @@ const NewsLayout = ({ newsData }: NewsProps) => {
           Latest news
         </h2>
         <ul className="news">
-          {
-            data &&
-              // @ts-ignore
-              data?.articles.map((article) => (
-                <li className="border-bottom">
-                  <span className="u-b-blue">
-                    {timeFormat(article.publishedAt)}
-                  </span>
-                  <h2>{excerpt(article.title, 0, 50, "all")}...</h2>
-                </li>
-              ))
-          }
+          {data &&
+            // @ts-ignore
+            data?.articles.map((article) => (
+              <li className="border-bottom">
+                <span className="u-b-blue">
+                  {timeFormat(article.publishedAt)}
+                </span>
+                <h2>{excerpt(article.title, 0, 50, "all")}...</h2>
+              </li>
+            ))}
         </ul>
       </div>
       <NewsCard data={newsData && newsData[2]} extraClass="item" />

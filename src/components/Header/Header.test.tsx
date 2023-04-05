@@ -1,12 +1,15 @@
 import React from "react";
+import Header from "./Header";
 import { render, screen } from "@testing-library/react";
-import { Layout } from "./Layout";
-import { BrowserRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
 
-const query = new QueryClient();
+const mockedUsedNavigate = jest.fn();
 
-jest.mock("./common/Icon/Icon", () => () => {
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
+jest.mock("../../common/Icon/Icon", () => () => {
   const getIcon = () => {
     return (
       <svg
@@ -28,15 +31,10 @@ jest.mock("./common/Icon/Icon", () => () => {
   return <div className="icon">{getIcon()}</div>;
 });
 
-describe("Layout", () => {
+describe("Header", () => {
   it("render", () => {
-    render(
-      <QueryClientProvider client={query}>
-        <BrowserRouter>
-          <Layout />
-        </BrowserRouter>
-      </QueryClientProvider>
-    );
-    expect(screen.getByTestId("layout")).toBeInTheDocument();
+    render(<Header />);
+
+    expect(screen.getByTestId("c-header")).toBeInTheDocument();
   });
 });

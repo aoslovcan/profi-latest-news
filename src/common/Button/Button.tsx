@@ -1,12 +1,13 @@
 import React, { MouseEventHandler } from "react";
 
 type ButtonProps = {
+  id: string;
   label: string;
   handleClick: MouseEventHandler<HTMLButtonElement>;
   type: string;
 };
 
-const Button = ({ label, handleClick, type }: ButtonProps) => {
+const Button = ({ id, label, handleClick, type }: ButtonProps) => {
   const checkType = (type: string) => {
     switch (type) {
       case "primary":
@@ -19,7 +20,7 @@ const Button = ({ label, handleClick, type }: ButtonProps) => {
   const classes = `c-button ${checkType(type)}`;
 
   return (
-    <button className={classes} onClick={handleClick}>
+    <button id={id} data-testid={id} className={classes} onClick={handleClick}>
       {label}
     </button>
   );
