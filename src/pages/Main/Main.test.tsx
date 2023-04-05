@@ -81,6 +81,10 @@ jest.mock("../../helpers/customHooks", () => ({
   useOnScroll: () => {
     jest.fn();
   },
+
+  useWindowSize: () => {
+    return {width: 1211}
+  }
 }));
 
 describe("Main", () => {

@@ -20,6 +20,7 @@
   }
 
   .logo {
+    @include fluidValue("margin-left", "s-40");
     width: rem(139px);
     height: rem(39px);
   }
