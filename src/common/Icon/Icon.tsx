@@ -9,6 +9,8 @@ import { ReactComponent as Health } from "../../assets/icons/Health.svg";
 import { ReactComponent as LabBottle } from "../../assets/icons/lab-bottle-experiment.svg";
 import { ReactComponent as LatestNews } from "../../assets/icons/Latest.svg";
 
+import "./Icon.scss";
+
 type IconProps = {
   type: string;
 };

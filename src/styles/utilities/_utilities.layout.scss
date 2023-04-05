@@ -2,21 +2,34 @@
   font-family: $font-primary;
   @include fluidValue("padding-top", "s-104");
   @include fluidValue("padding-bottom", "s-104");
+  @include fluidValue("padding-right", "s-180");
   @include fluidValue("margin-right", "s-180");
   @include fluidValue("margin-left", "s-180");
 
+  @include mq(xl) {
+    @include fluidValue("margin-left", "s-64");
+    @include fluidValue("padding-right", "s-180");
+    @include fluidValue("margin-right", "s-6");
+  }
+
   @include mq(lg) {
-    @include fluidValue("margin-right", "s-180");
-    @include fluidValue("margin-left", "s-180");
+    @include fluidValue("margin-left", "s-56");
+    //@include fluidValue("padding-right", "s-180");
+    @include fluidValue("margin-right", "s-6");
+    @include fluidValue("padding-right", "s-6");
   }
 
   @include mq(md) {
-    @include fluidValue("margin-right", "s-56");
-    @include fluidValue("margin-left", "s-56");
+    @include fluidValue("margin-left", "s-6");
+   // @include fluidValue("margin-right", "s-6");
+    //@include fluidValue("padding-right", "s-180");
+    @include fluidValue("margin-right", "s-6");
+    @include fluidValue("padding-right", "s-6");
   }
   @include mq(sm) {
-    @include fluidValue("margin-right", "s-20");
-    @include fluidValue("margin-left", "s-20");
+    @include fluidValue("margin-left", "s-6");
+    //@include fluidValue("padding-right", "s-180");
+    @include fluidValue("padding-right", "s-6");
   }
 }
 
@@ -31,16 +44,28 @@
 .main {
   min-height: 100vh;
   @include fluidValue("margin-left", "s-120");
+  //@include fluidValue("padding-right", "s-180");
+
+  @include mq(xl) {
+    @include fluidValue("margin-left", "s-120");
+
+    //@include fluidValue("margin-left", "s-120");
+  }
 
   @include mq(lg) {
-    @include fluidValue("margin-left", "s-120");
+    @include fluidValue("margin-left", "s-6");
+    //@include fluidValue("margin-left", "s-120");
   }
 
   @include mq(md) {
-    @include fluidValue("margin-left", "s-56");
+    @include fluidValue("margin-top", "s-120");
+    @include fluidValue("margin-left", "s-6");
+    //@include fluidValue("margin-left", "s-20");
   }
   @include mq(sm) {
-    @include fluidValue("margin-left", "s-20");
+    @include fluidValue("margin-top", "s-120");
+    @include fluidValue("margin-left", "s-32");
+    //@include fluidValue("margin-left", "s-20");
   }
 
   &__inner {
@@ -50,5 +75,67 @@
     /*flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;*/
+
+    @include mq(lg) {
+      grid-template-columns: 322px 322px;
+    }
+
+    @include mq(md){
+      grid-template-columns: 322px 322px;
+    }
+
+    @include mq(sm) {
+      grid-template-columns: 322px
+    }
+
+
+  }
+}
+
+.item {
+  grid-column: 0;
+
+  @include mq(lg) {
+    grid-column: 0;
+  }
+
+  @include mq(md){
+    grid-column: 0;
+  }
+
+  @include mq(sm) {
+    grid-column: 0;
+  }
+
+  /*@include mq(lg) {
+    grid-template-columns: 322px 322px;
+  }
+
+  @include mq(md){
+    grid-column: 2;
+  }
+
+  @include mq(sm) {
+    grid-column: 3;
+  }*/
+}
+
+.item-column {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+
+  @include mq(lg) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  @include mq(md){
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  @include mq(sm) {
+    grid-column: 1;
+    grid-row: 1 / span 1;
   }
 }

@@ -1,4 +1,5 @@
-import { useInfiniteQuery, useQuery } from "react-query";
+import React, {useEffect, useState} from "react";
+import { useQuery } from "react-query";
 import { NewsClient } from "../api/NewsClient/NewsClient";
 const newsClient = new NewsClient();
 
@@ -32,3 +33,25 @@ export const useOnScroll = (elem: string, callback: Function) => {
     callback();
   });
 };
+
+export const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    const  handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+  return windowSize;
+}

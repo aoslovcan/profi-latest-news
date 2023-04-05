@@ -3,4 +3,9 @@
   min-height: 100vh;
   width: 10%;
   //@include fluidValue("margin-right", "s-180");
+
+  @include mq(lg) {
+   display: none;
+    //@include fluidValue("margin-left", "s-20")
+  }
 }

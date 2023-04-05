@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header className="c-header border-bottom" data-testid="c-header">
+    <header className="c-header u-border-bottom" data-testid="c-header">
       <img className="logo" alt="logo" src={logo} />
       <SearchInput
         placeholder="Search news"

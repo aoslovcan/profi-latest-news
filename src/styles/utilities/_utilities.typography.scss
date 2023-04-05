@@ -118,3 +118,7 @@
   font-family: $font-primary;
   @include fontSize("b4");
 }
+
+.u-border-bottom {
+  border-bottom: 2px solid $border-opacity;
+}
