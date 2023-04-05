@@ -1,5 +1,4 @@
 import React from "react";
-import "./SideBar.scss";
 
 type SideBarProps = {
   children: React.ReactNode;

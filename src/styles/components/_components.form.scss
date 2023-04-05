@@ -5,8 +5,19 @@
   background-color: $primary-white;
   border-radius: rem(10px);
   box-shadow: 0 1px 2px -1px $shadow-color;
-  width: rem(725px);
+  width: rem(700px);
   @include fluidValue("margin-left", "s-40");
+
+  @include mq(lg) {
+    width: rem(525px);
+  }
+
+  @include mq(md) {
+    width: rem(500px);
+  }
+  @include mq(sm) {
+    width: rem(250px);
+  }
 
   &__inner {
     display: flex;
@@ -22,9 +33,5 @@
     outline: none;
     border: none;
     opacity: 0.4;
-  }
-
-  .c-button {
-    text-transform: uppercase;
   }
 }

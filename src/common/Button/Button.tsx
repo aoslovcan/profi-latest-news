@@ -5,9 +5,10 @@ type ButtonProps = {
   label: string;
   handleClick: MouseEventHandler<HTMLButtonElement>;
   type: string;
+  buttonClass?: string;
 };
 
-const Button = ({ id, label, handleClick, type }: ButtonProps) => {
+const Button = ({ id, label, handleClick, type, buttonClass }: ButtonProps) => {
   const checkType = (type: string) => {
     switch (type) {
       case "primary":
@@ -17,7 +18,7 @@ const Button = ({ id, label, handleClick, type }: ButtonProps) => {
     }
   };
 
-  const classes = `c-button ${checkType(type)}`;
+  const classes = `c-button ${checkType(type)} ${buttonClass ? buttonClass : ""}`;
 
   return (
     <button id={id} data-testid={id} className={classes} onClick={handleClick}>
