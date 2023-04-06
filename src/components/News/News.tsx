@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import NewsCard from "./NewsCard/NewsCard";
 
 import { News, NewsList } from "../../types/news";
@@ -11,28 +11,27 @@ type NewsProps = {
 };
 
 const NewsLayout = ({ newsData }: NewsProps) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
+  const {width} = useWindowSize();
+  const { data } = useLatestNews(currentPage, pageSize);
+
   const returnRestData = (fromValue : number) => {
     return excerpt(newsData, fromValue, 0, "rest");
   };
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 6;
-
-  const {width} = useWindowSize();
-
-  const { data } = useLatestNews(currentPage, pageSize);
 
   const loadData = useCallback(() => {
     // @ts-ignore
     if (data?.totalResults >= pageSize * currentPage) {
       setCurrentPage(currentPage + 1);
+      // @ts-ignore
       return;
     }
 
     return;
   }, [data]);
 
-  //useOnScroll("c-panel", loadData);
+  useOnScroll("c-panel", loadData);
 
   const panelElement = (<div className="c-panel c-news-panel item-column">
     <h2 className="c-panel__title">
@@ -40,7 +39,7 @@ const NewsLayout = ({ newsData }: NewsProps) => {
       Latest news
     </h2>
     <ul className="news">
-      {data &&
+      {data && data?.articles &&
           // @ts-ignore
           data?.articles.map((article) => (
               <li className="u-border-bottom">
