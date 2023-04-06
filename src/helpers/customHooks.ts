@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import { useQuery } from "react-query";
 import { NewsClient } from "../api/NewsClient/NewsClient";
 const newsClient = new NewsClient();
@@ -30,7 +30,10 @@ export const useOnScroll = (elem: string, callback: Function) => {
   let scrollElement = document.querySelector(`.${elem}`);
 
   scrollElement?.addEventListener("scroll", () => {
-    callback();
+    // @ts-ignore
+    if(scrollElement?.scrollTop === 0){
+      callback();
+    }
   });
 };
 
