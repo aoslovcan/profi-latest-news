@@ -83,8 +83,8 @@ jest.mock("../../helpers/customHooks", () => ({
   },
 
   useWindowSize: () => {
-    return {width: 1211}
-  }
+    return { width: 1211 };
+  },
 }));
 
 describe("Main", () => {

@@ -60,7 +60,6 @@ $size322: rem(322px);
     @include fluidValue("margin-left", "s-32");
   }
 
-
   &__inner {
     display: grid;
     grid-gap: 41px;
@@ -70,12 +69,12 @@ $size322: rem(322px);
       grid-template-columns: $size322 $size322;
     }
 
-    @include mq(md){
+    @include mq(md) {
       grid-template-columns: $size322 $size322;
     }
 
     @include mq(sm) {
-      grid-template-columns: $size322
+      grid-template-columns: $size322;
     }
   }
 }
@@ -93,7 +92,7 @@ $size322: rem(322px);
     grid-row: 1 / span 2;
   }
 
-  @include mq(md){
+  @include mq(md) {
     grid-column: 2;
     grid-row: 1 / span 2;
   }

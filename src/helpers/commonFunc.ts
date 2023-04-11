@@ -12,13 +12,13 @@ export const excerpt = (
   }
 };
 
-export const checkIfTwoDigit = (value : number) => {
-  if(value <= 9){
+export const checkIfTwoDigit = (value: number) => {
+  if (value <= 9) {
     return `0${value}`;
   }
 
   return value;
-}
+};
 
 export const timeFormat = (date: Date) => {
   const newDate = new Date(date);
