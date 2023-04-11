@@ -16,7 +16,7 @@
     justify-content: right;
   }
   @include mq(sm) {
-   @include fluidValue("padding-right", "s-4");
+    @include fluidValue("padding-right", "s-4");
   }
 
   .logo {

@@ -18,7 +18,9 @@ const Button = ({ id, label, handleClick, type, buttonClass }: ButtonProps) => {
     }
   };
 
-  const classes = `c-button ${checkType(type)} ${buttonClass ? buttonClass : ""}`;
+  const classes = `c-button ${checkType(type)} ${
+    buttonClass ? buttonClass : ""
+  }`;
 
   return (
     <button id={id} data-testid={id} className={classes} onClick={handleClick}>

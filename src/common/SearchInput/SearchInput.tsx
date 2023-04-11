@@ -32,7 +32,7 @@ const SearchInput = ({
 
   const searchButton = hasButton && !isReset && (
     <Button
-        buttonClass="u-uppercase"
+      buttonClass="u-uppercase"
       id="search-button"
       label="Search"
       handleClick={onSearch}

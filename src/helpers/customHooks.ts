@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { NewsClient } from "../api/NewsClient/NewsClient";
 const newsClient = new NewsClient();
@@ -27,11 +27,13 @@ export const useLatestNews = (page: number = 1, pageSize: number) => {
 };
 
 export const useOnScroll = (elem: string, callback: Function) => {
-  let scrollElement = document.querySelector(`.${elem}`);
+  const scrollElement  = document.querySelector(`.${elem}`) as HTMLElement;
 
   scrollElement?.addEventListener("scroll", () => {
-    // @ts-ignore
-    if(scrollElement?.scrollTop === 0){
+    if (
+      scrollElement?.scrollHeight - scrollElement.offsetHeight ===
+      scrollElement?.scrollTop
+    ) {
       callback();
     }
   });
@@ -44,17 +46,16 @@ export const useWindowSize = () => {
   });
 
   useEffect(() => {
-    const  handleResize = () => {
+    const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
-    }
+    };
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
   return windowSize;
-}
+};
