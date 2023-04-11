@@ -30,7 +30,6 @@ export const useOnScroll = (elem: string, callback: Function) => {
   const scrollElement  = document.querySelector(`.${elem}`) as HTMLElement;
 
   scrollElement?.addEventListener("scroll", () => {
-    // @ts-ignore
     if (
       scrollElement?.scrollHeight - scrollElement.offsetHeight ===
       scrollElement?.scrollTop
