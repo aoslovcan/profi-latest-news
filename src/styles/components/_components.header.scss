@@ -1,6 +1,7 @@
 .c-header {
   display: flex;
   flex-direction: row;
+  //align-items: center;
   @include fluidValue("padding-bottom", "s-24");
   position: fixed;
   @include fluidValue("padding-right", "s-320");
@@ -24,4 +25,11 @@
     width: rem(139px);
     height: rem(39px);
   }
+
+  &__mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
+

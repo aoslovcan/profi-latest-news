@@ -1,0 +1,14 @@
+.c-mobile-navigation-wrapper{
+  position: fixed;
+  top: rem(180px);
+  background-color: $primary-grey;
+  z-index: 9999;
+  min-height: 100vh;
+  width: 100%;
+
+  .c-menu{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+}

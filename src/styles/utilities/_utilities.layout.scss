@@ -48,7 +48,7 @@ $size322: rem(322px);
   }
 
   @include mq(lg) {
-    @include fluidValue("margin-left", "s-6");
+    @include fluidValue("margin-left", "s-104");
   }
 
   @include mq(md) {

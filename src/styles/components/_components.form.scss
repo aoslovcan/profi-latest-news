@@ -14,9 +14,11 @@
 
   @include mq(md) {
     width: rem(500px);
+    @include fluidValue("margin-top", "s-40");
   }
   @include mq(sm) {
     width: rem(250px);
+    @include fluidValue("margin-top", "s-40");
   }
 
   &__inner {
