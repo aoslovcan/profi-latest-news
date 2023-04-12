@@ -60,6 +60,15 @@ $size322: rem(322px);
     @include fluidValue("margin-left", "s-32");
   }
 
+  .main-page{
+    &__navigation{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      @include fluidValue("margin-top", "s-32");
+    }
+  }
+
   &__inner {
     display: grid;
     grid-gap: 41px;

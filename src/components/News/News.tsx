@@ -61,8 +61,10 @@ const NewsLayout = ({ newsData }: NewsProps) => {
     </div>
   );
 
+  console.log(width);
 
-  if (width <= 1241) {
+
+  if (width <= 1241 && width > 480) {
     return (
       <>
         <NewsCard data={newsData[0]} extraClass="item" />
@@ -72,28 +74,42 @@ const NewsLayout = ({ newsData }: NewsProps) => {
         {
           // @ts-ignore
           returnRestData(4)?.map((news: News) => {
-            return <NewsCard data={news} />;
+              return (<NewsCard data={news} />)
           })
         }
       </>
     );
   }
 
-  return (
-    <>
-      <NewsCard data={newsData && newsData[0]} extraClass="item" />
-      <NewsCard data={newsData && newsData[1]} />
-      {panelElement}
-      <NewsCard data={newsData && newsData[2]} extraClass="item" />
+  else if(width <= 480){
+      return (
+         <>
+             {newsData.map((news : News) => {
+                 return (<NewsCard data={news}/>)
+             })}
+         </>
+      )
+  }
 
-      {
-        // @ts-ignore
-        returnRestData(3)?.map((news: News) => (
-          <NewsCard data={news} />
-        ))
-      }
-    </>
-  );
+  else{
+      return (
+          <>
+              <NewsCard data={newsData && newsData[0]} extraClass="item" />
+              <NewsCard data={newsData && newsData[1]} />
+              {panelElement}
+              <NewsCard data={newsData && newsData[2]} extraClass="item" />
+
+              {
+                  // @ts-ignore
+                  returnRestData(3)?.map((news: News) => (
+                      <NewsCard data={news} />
+                  ))
+              }
+          </>
+      );
+  }
+
+
 };
 
 export default NewsLayout;
