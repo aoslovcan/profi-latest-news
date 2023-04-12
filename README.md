@@ -6,6 +6,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## `npm install`
+
+Will install all npm modules that is necessary for starting the project.
+
+## Before starting the app
+
+In .env file we need to put api key under REACT_APP_API_KEY variable. 
+The key will be available here [https://newsapi.org/](https://newsapi.org/) after registration.
+
+The first page showed the latest news. 
+Clicking on any category, it will be called a query with category param and country which is set to "us".
+After api calling, data is cached for 24h in browser memory with react-query.
+If there is no caching data, it will call API again.
+
+Layout contains a header with a logo and search which is implemented as frontend search by name and it searches the current displayed data from the api. 
+The second thing on the layout is the navigation category and the main component, which will show data depending
+on the category selected.
+
+Styles from component are written in scss, following the ITCSS standard for scss structure. 
+All styles are in styles folder.
+
+For testing, it is used jest and react-testing library.
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -16,8 +39,11 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs all files with test.tsx.
+
+### `npm prettier`
+
+Format the code with prettier rules.
 
 ### `npm run build`
 
