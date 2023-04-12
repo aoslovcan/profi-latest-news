@@ -61,9 +61,6 @@ const NewsLayout = ({ newsData }: NewsProps) => {
     </div>
   );
 
-  console.log(width);
-
-
   if (width <= 1241 && width > 480) {
     return (
       <>
